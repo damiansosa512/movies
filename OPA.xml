@@ -1,0 +1,2843 @@
+Request
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:i18n="http://www.w3.org/2005/09/ws-i18n" xmlns:typ="http://oracle.com/determinations/server/12.2.1/rulebase/assess/types">
+	<soapenv:Header>
+		<wsse:Security soapenv:mustUnderstand="1" xmlns:wsse="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-secext-1.0.xsd" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd">
+			<wsse:UsernameToken wsu:Id="UsernameToken-DA3C572ABA27275A13152045224617656">
+				<wsse:Username>admin</wsse:Username>
+				<wsse:Password Type="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-username-token-profile-1.0#PasswordText">Passw0rd</wsse:Password>
+				<wsse:Nonce EncodingType="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-soap-message-security-1.0#Base64Binary">PlB2muIKfN/8d3HAUbU6SA==</wsse:Nonce>
+				<wsu:Created>2018-03-07T19:50:46.176Z</wsu:Created>
+			</wsse:UsernameToken>
+		</wsse:Security>
+	</soapenv:Header>
+	<soapenv:Body>
+		<typ:assess-request>
+			<typ:config>
+				<typ:outcome>
+					<typ:entity id="line_item">
+						<typ:attribute-outcome id="line_itemDealId" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_item" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemServiceCharge" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemMinimumAmount" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemMaximumAmount" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemAmount" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemAccount" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemBarcode" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemCoupon" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemCurrencyID" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemProductService" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemType" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemVoucher" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemTenderType" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemDueDate" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemDueDateType" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_itemOpenCloseAmount" outcome-style="value-only"/>
+					</typ:entity>
+					<typ:entity id="line_item_error">
+						<typ:attribute-outcome id="line_item_error" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_item_errorDescription" outcome-style="value-only"/>
+					</typ:entity>                                                     
+					<typ:entity id="line_item_tender_allowed">
+						<typ:attribute-outcome id="line_item_tender_allowed" outcome-style="value-only"/>
+					</typ:entity>                                                     
+					<typ:entity id="error">
+						<typ:attribute-outcome id="error" outcome-style="value-only"/>
+						<typ:attribute-outcome id="errorDescription" outcome-style="value-only"/>
+					</typ:entity>
+					<typ:entity id="line_item_additional_data">
+						<typ:attribute-outcome id="line_item_additional_data" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_item_additional_dataType" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_item_additional_dataStringValue" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_item_additional_dataNumberValue" outcome-style="value-only"/>
+						<typ:attribute-outcome id="line_item_additional_dataListValue" outcome-style="value-only"/>
+					</typ:entity>                                     
+				</typ:outcome>
+			</typ:config>
+			<typ:global-instance>
+				<typ:attribute id="operation">
+					<typ:text-val>Confirmation</typ:text-val>	
+				</typ:attribute>
+				<typ:attribute id="systemDateTime">
+					<typ:datetime-val>2019-07-10T17:03:49</typ:datetime-val>
+				</typ:attribute>   
+				<typ:attribute id="debugging">
+					<typ:boolean-val>false</typ:boolean-val>
+				</typ:attribute>            
+				<typ:entity id="workstation">
+					<typ:instance id="100">
+						<typ:attribute id="workstation">
+							<typ:number-val>100</typ:number-val>
+						</typ:attribute>               
+						<typ:attribute id="workstationEquipmentId">
+							<typ:text-val>AA</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="workstationExternalId">
+							<typ:text-val>11</typ:text-val>
+						</typ:attribute>     
+						<typ:attribute id="workstationStatus">
+							<typ:text-val>Inactive</typ:text-val>
+						</typ:attribute>           
+						<typ:attribute id="workstationTerminalStatusSOL">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="workstationType">
+							<typ:text-val>tipo</typ:text-val>
+						</typ:attribute>      
+						<typ:entity id="workstation_currency">
+							<typ:instance id="PES">
+								<typ:attribute id="workstation_currency">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>                                               
+							</typ:instance>
+							<typ:instance id="EUR">
+								<typ:attribute id="workstation_currency">
+									<typ:text-val>EUR</typ:text-val>
+								</typ:attribute>                                               
+							</typ:instance>
+						</typ:entity>   
+						<typ:entity id="workstation_tender">
+							<typ:instance id="Efectivo">
+								<typ:attribute id="workstation_tender">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>                                               
+							</typ:instance>
+							<typ:instance id="PEI">
+								<typ:attribute id="workstation_tender">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>                                               
+							</typ:instance>
+						</typ:entity>                                                                                                                   
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="retail_store">  
+					<typ:instance id="A">                        
+						<typ:attribute id="retail_store">
+							<typ:text-val>A</typ:text-val>
+						</typ:attribute>    
+						<typ:attribute id="retail_storeClassificationCode">
+							<typ:text-val>classif</typ:text-val>
+						</typ:attribute>          
+						<typ:attribute id="retail_storeClassificationName">
+							<typ:text-val>classifname</typ:text-val>
+						</typ:attribute>              
+						<typ:attribute id="retail_storeGeographicSegment1">
+							<typ:text-val>geoseg1</typ:text-val>
+						</typ:attribute>                                                                                              
+						<typ:attribute id="retail_storeGeographicSegment2">
+							<typ:text-val>geoseg2</typ:text-val>
+						</typ:attribute>          
+						<typ:attribute id="retail_storeGeographicSegment3">
+							<typ:text-val>geoseg3</typ:text-val>
+						</typ:attribute>          
+						<typ:attribute id="retail_storeGeographicSegment4">
+							<typ:text-val>geoseg4</typ:text-val>
+						</typ:attribute>          
+						<typ:attribute id="retail_storeGeographicSegment5">
+							<typ:text-val>geoseg5</typ:text-val>
+						</typ:attribute>          
+						<typ:attribute id="retail_storeName">
+							<typ:text-val>nombre retail</typ:text-val>
+						</typ:attribute>              
+						<typ:attribute id="retail_storeOperationHoursBeginMtoF">
+							<typ:text-val>0900</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="retail_storeOperationHoursEndMtoF">
+							<typ:text-val>1800</typ:text-val>
+						</typ:attribute> 
+						<typ:attribute id="retail_storeOperationHoursBeginSat">
+							<typ:text-val>0900</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="retail_storeOperationHoursEndSat">
+							<typ:text-val>1800</typ:text-val>
+						</typ:attribute>                                                                               
+						<typ:attribute id="retail_storeOperationHoursBeginSun">
+							<typ:text-val>0900</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="retail_storeOperationHoursEndSun">
+							<typ:text-val>1800</typ:text-val>
+						</typ:attribute>                                                                               
+						<typ:attribute id="retail_storeStatusCode">
+							<typ:text-val>AC</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="retail_storeStatusName">
+							<typ:text-val>Inactive</typ:text-val>
+						</typ:attribute>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+						<typ:attribute id="retail_storeTypeCode">
+							<typ:text-val>typecode1</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="retail_storeTypeName">
+							<typ:text-val>typename</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeCancellationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeWithoutInvoice">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="retail_storeWUOwnFlag">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>                               
+						<typ:attribute id="retail_storeConsiderHolidays">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+					</typ:instance>                                                                
+				</typ:entity>
+				<typ:entity id="corporate_organization"> 
+					<typ:instance id="A">
+						<typ:attribute id="corporate_organization">
+							<typ:text-val>corporate name</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="corporate_organizationStatus">
+							<typ:text-val>Inactive</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="Holiday"> 
+					<typ:instance id="2019-08-10">
+						<typ:attribute id="Holiday">
+							<typ:date-val>2019-08-10</typ:date-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="2019-12-31">
+						<typ:attribute id="Holiday">
+							<typ:date-val>2019-12-31</typ:date-val>
+						</typ:attribute>
+					</typ:instance>
+				</typ:entity>                     
+				<typ:entity id="line_item_input"> 
+					<typ:instance id="11">
+						<typ:attribute id="line_item_input">
+							<typ:number-val>11</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount">
+							<typ:text-val>777</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount">
+							<typ:number-val>100</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode">
+							<typ:text-val>305610600010072003815001919600381500191968</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon">
+							<typ:text-val>111</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId">
+							<typ:text-val>12</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate">
+							<typ:date-val>2019-10-24</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService">
+							<typ:text-val>AAA</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher">
+							<typ:text-val>aaa</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="line_item_input_additional_data">
+							<typ:instance id="11-Dato Adicional 1">
+								<typ:attribute id="line_item_input_additional_data">
+									<typ:text-val>Dato Adicional 1</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataType">
+									<typ:text-val>String</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataStringValue">
+									<typ:text-val>Valor Dato Adicional 1</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="11-Dato Adicional 2">
+								<typ:attribute id="line_item_input_additional_data">
+									<typ:text-val>Dato Adicional 2</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataType">
+									<typ:text-val>List</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataListValue">
+									<typ:text-val>Valor Dato Adicional 1</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="11-Dato Adicional 3">
+								<typ:attribute id="line_item_input_additional_data">
+									<typ:text-val>Dato Adicional 3</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataType">
+									<typ:text-val>Number</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataNumberValue">
+									<typ:number-val>1123</typ:number-val>
+								</typ:attribute>
+							</typ:instance>
+
+						</typ:entity>                                     
+					</typ:instance>
+					<typ:instance id="12">
+						<typ:attribute id="line_item_input">
+							<typ:number-val>12</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount">
+							<typ:text-val>2345</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount">
+							<typ:number-val>200</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode">
+							<typ:text-val>026500038665192050845220190610000001280763</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon">
+							<typ:text-val>222</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId">
+							<typ:text-val>13</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate">
+							<typ:date-val>2019-10-25</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService">
+							<typ:text-val>BBB</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher">
+							<typ:text-val>bbb</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="13">
+						<typ:attribute id="line_item_input">
+							<typ:number-val>13</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount">
+							<typ:text-val>3456</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount">
+							<typ:number-val>300</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode">
+							<typ:text-val>790211495502766866071220181010596000120180002003600020</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon">
+							<typ:text-val>333</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId">
+							<typ:text-val>25</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate">
+							<typ:date-val>2019-10-26</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService">
+							<typ:text-val>CCC</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher">
+							<typ:text-val>ccc</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="14">
+						<typ:attribute id="line_item_input">
+							<typ:number-val>14</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount">
+							<typ:text-val>4567</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount">
+							<typ:number-val>400</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode">
+							<typ:text-val>679YT5W0002091808071900000000005</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon">
+							<typ:text-val>444</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId">
+							<typ:text-val>10</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate">
+							<typ:date-val>2019-10-27</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService">
+							<typ:text-val>DDD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher">
+							<typ:text-val>ddd</typ:text-val>
+						</typ:attribute>
+					</typ:instance> 
+					<typ:instance id="15">
+						<typ:attribute id="line_item_input">
+							<typ:number-val>15</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount">
+							<typ:number-val>1000</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType">
+							<typ:text-val>Tender</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputTenderType">
+							<typ:text-val>PEI</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDebitCredit">
+							<typ:text-val>Credit</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="16">
+						<typ:attribute id="line_item_input">
+							<typ:number-val>16</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType">
+							<typ:text-val>Service Charge</typ:text-val>
+						</typ:attribute>
+					</typ:instance>                                                                                                                                                                                                                
+				</typ:entity>
+				<typ:entity id="master_deal"> 
+					<typ:instance id="1">
+						<typ:attribute id="master_deal">
+							<typ:number-val>1</typ:number-val>
+						</typ:attribute>                                                              
+						<typ:attribute id="master_dealType">
+							<typ:text-val>Tender</typ:text-val>
+						</typ:attribute>   
+					</typ:instance>
+					<typ:instance id="2">
+						<typ:attribute id="master_deal">
+							<typ:number-val>2</typ:number-val>
+						</typ:attribute>                                                              
+						<typ:attribute id="master_dealType">
+							<typ:text-val>Service Charge</typ:text-val>
+						</typ:attribute>                              
+					</typ:instance>                                                                
+					<typ:instance id="10">
+						<typ:attribute id="master_deal">
+							<typ:number-val>10</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId">
+							<typ:text-val>10</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode">
+							<typ:text-val>cl10code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName">
+							<typ:text-val>cl10codename</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSIPrepaidCategory">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSIMigrated">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>          
+						<typ:attribute id="master_dealSupplierName">
+							<typ:text-val>Supplier10</typ:text-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSupplierStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSupplierWUClassification">
+							<typ:text-val>SupplierClassif10</typ:text-val>
+						</typ:attribute>                               
+						<typ:attribute id="master_dealOpenAmount">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealMaximumAmount">
+							<typ:text-val>200</typ:text-val>
+						</typ:attribute>                                                                                                                                                                                               
+						<typ:attribute id="master_dealMinimumAmount">
+							<typ:text-val>20</typ:text-val>
+						</typ:attribute>     
+						<typ:attribute id="master_dealCurrencyCalcMethod">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>    
+						<typ:attribute id="master_dealCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>                                                                              
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue">
+							<typ:number-val>238.93</typ:number-val>
+						</typ:attribute>                                                                                                            
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue">
+							<typ:number-val>538.93</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue">
+							<typ:number-val>638.93</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue">
+							<typ:number-val>1</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue">
+							<typ:number-val>2</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealServiceChargeAlgorithm">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealServiceChargeAmount1">
+							<typ:number-val>100</typ:number-val>
+						</typ:attribute>        
+						<typ:attribute id="master_dealServiceChargeAmount2">
+							<typ:number-val>10</typ:number-val>
+						</typ:attribute>       
+						<typ:attribute id="master_dealServiceChargePercentage">
+							<typ:number-val>2</typ:number-val>
+						</typ:attribute>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+						<typ:attribute id="master_dealEffectiveDate">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealExpirationDate">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealFirstExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>                                
+						<typ:attribute id="master_dealSecondExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute> 
+						<typ:attribute id="master_dealThirdExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute> 
+						<typ:attribute id="master_dealBCD">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute> 
+						<typ:attribute id="master_dealWithoutInvoice">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute> 
+						<typ:entity id="master_deal_currency_allowed">  
+							<typ:instance id="10-PES"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="10-USD"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>
+						<typ:entity id="master_deal_tender_allowed">  
+							<typ:instance id="10-Efectivo"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="10-PEI"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>                                     
+					</typ:instance> 
+					<typ:instance id="12">
+						<typ:attribute id="master_deal">
+							<typ:number-val>12</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId">
+							<typ:text-val>12</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode">
+							<typ:text-val>cl12code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName">
+							<typ:text-val>cl12codename</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSIPrepaidCategory">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSIMigrated">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>          
+						<typ:attribute id="master_dealSupplierName">
+							<typ:text-val>Supplier12</typ:text-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSupplierStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSupplierWUClassification">
+							<typ:text-val>SupplierClassif12</typ:text-val>
+						</typ:attribute>                               
+						<typ:attribute id="master_dealOpenAmount">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealMaximumAmount">
+							<typ:text-val>hola</typ:text-val>
+						</typ:attribute>                                                                                                                                                                                               
+						<typ:attribute id="master_dealMinimumAmount">
+							<typ:text-val>chau</typ:text-val>
+						</typ:attribute>     
+						<typ:attribute id="master_dealCurrencyCalcMethod">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>    
+						<typ:attribute id="master_dealCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>                                                                              
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue">
+							<typ:number-val>238.93</typ:number-val>
+						</typ:attribute>                                                                                                            
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue">
+							<typ:number-val>538.93</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue">
+							<typ:number-val>638.93</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealServiceChargeAlgorithm">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealServiceChargeAmount1">
+							<typ:number-val>120</typ:number-val>
+						</typ:attribute>        
+						<typ:attribute id="master_dealServiceChargeAmount2">
+							<typ:number-val>12</typ:number-val>
+						</typ:attribute>       
+						<typ:attribute id="master_dealServiceChargePercentage">
+							<typ:number-val>2</typ:number-val>
+						</typ:attribute>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+						<typ:attribute id="master_dealEffectiveDate">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealExpirationDate">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealFirstExpirationAllowed">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>                                
+						<typ:attribute id="master_dealSecondExpirationAllowed">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>         
+						<typ:attribute id="master_dealThirdExpirationAllowed">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealBCD">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealWithoutInvoice">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute> 
+						<typ:entity id="master_deal_currency_allowed">  
+							<typ:instance id="12-PES"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="12-USD"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>
+						<typ:entity id="master_deal_tender_allowed">  
+							<typ:instance id="12-Efectivo"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="12-PEI"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>
+						<typ:entity id="master_deal_additional_data">
+							<typ:instance id="12-Dato Adicional 1">
+								<typ:attribute id="master_deal_additional_data">
+									<typ:text-val>Dato Adicional</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="master_deal_additional_dataType">
+									<typ:text-val>String</typ:text-val>
+								</typ:attribute>                                                               
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="13">
+						<typ:attribute id="master_deal">
+							<typ:number-val>13</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId">
+							<typ:text-val>13</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode">
+							<typ:text-val>cl13code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName">
+							<typ:text-val>cl13codename</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSIPrepaidCategory">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSIMigrated">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>          
+						<typ:attribute id="master_dealSupplierName">
+							<typ:text-val>Supplier13</typ:text-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSupplierStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSupplierWUClassification">
+							<typ:text-val>SupplierClassif13</typ:text-val>
+						</typ:attribute>                               
+						<typ:attribute id="master_dealOpenAmount">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealMaximumAmount">
+							<typ:text-val/>
+						</typ:attribute>                                                                                                                                                                                               
+						<typ:attribute id="master_dealMinimumAmount">
+							<typ:text-val/>
+						</typ:attribute>     
+						<typ:attribute id="master_dealCurrencyCalcMethod">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>    
+						<typ:attribute id="master_dealCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>                                                                              
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue">
+							<typ:number-val>100</typ:number-val>
+						</typ:attribute>                                                                                                            
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue">
+							<typ:number-val>180</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue">
+							<typ:number-val>200</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealServiceChargeAlgorithm">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealServiceChargeAmount1">
+							<typ:number-val>130</typ:number-val>
+						</typ:attribute>        
+						<typ:attribute id="master_dealServiceChargeAmount2">
+							<typ:number-val>13</typ:number-val>
+						</typ:attribute>       
+						<typ:attribute id="master_dealServiceChargePercentage">
+							<typ:number-val>2</typ:number-val>
+						</typ:attribute>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+						<typ:attribute id="master_dealEffectiveDate">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealExpirationDate">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealFirstExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>                                
+						<typ:attribute id="master_dealSecondExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>         
+						<typ:attribute id="master_dealThirdExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealBCD">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute> 
+						<typ:attribute id="master_dealWithoutInvoice">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:entity id="master_deal_currency_allowed">  
+							<typ:instance id="13-PES"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="13-USD"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>
+						<typ:entity id="master_deal_tender_allowed">  
+							<typ:instance id="13-Efectivo"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="13-PEI"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>                                            
+					</typ:instance>                                                                                                                                                                
+					<typ:instance id="25">
+						<typ:attribute id="master_deal">
+							<typ:number-val>25</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId">
+							<typ:text-val>25</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode">
+							<typ:text-val>cl25code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName">
+							<typ:text-val>cl25codename</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSIPrepaidCategory">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSIMigrated">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>          
+						<typ:attribute id="master_dealSupplierName">
+							<typ:text-val>Supplier25</typ:text-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealSupplierStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>               
+						<typ:attribute id="master_dealSupplierWUClassification">
+							<typ:text-val>SupplierClassif25</typ:text-val>
+						</typ:attribute>                               
+						<typ:attribute id="master_dealOpenAmount">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>           
+						<typ:attribute id="master_dealMaximumAmount">
+							<typ:text-val/>
+						</typ:attribute>                                                                                                                                                                                               
+						<typ:attribute id="master_dealMinimumAmount">
+							<typ:text-val/>
+						</typ:attribute>     
+						<typ:attribute id="master_dealCurrencyCalcMethod">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>    
+						<typ:attribute id="master_dealCurrencyID">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>                                                                              
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue">
+							<typ:number-val>100</typ:number-val>
+						</typ:attribute>                                                                                                            
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue">
+							<typ:number-val>180</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue">
+							<typ:number-val>200</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>      
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue">
+							<typ:number-val>3</typ:number-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealType">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealServiceChargeAlgorithm">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>   
+						<typ:attribute id="master_dealServiceChargeAmount1">
+							<typ:number-val>250</typ:number-val>
+						</typ:attribute>        
+						<typ:attribute id="master_dealServiceChargeAmount2">
+							<typ:number-val>25</typ:number-val>
+						</typ:attribute>       
+						<typ:attribute id="master_dealServiceChargePercentage">
+							<typ:number-val>2</typ:number-val>
+						</typ:attribute>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    
+						<typ:attribute id="master_dealEffectiveDate">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>                              
+						<typ:attribute id="master_dealExpirationDate">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>  
+						<typ:attribute id="master_dealStatus">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealFirstExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>                                
+						<typ:attribute id="master_dealSecondExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>         
+						<typ:attribute id="master_dealThirdExpirationAllowed">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCD">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute> 
+						<typ:attribute id="master_dealWithoutInvoice">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:entity id="master_deal_currency_allowed">  
+							<typ:instance id="25-PES"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="25-USD"> 
+								<typ:attribute id="master_deal_currency_allowed">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>
+						<typ:entity id="master_deal_tender_allowed">  
+							<typ:instance id="25-Efectivo"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>   
+							<typ:instance id="25-PEI"> 
+								<typ:attribute id="master_deal_tender_allowed">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>                                                   
+						</typ:entity>                                               
+					</typ:instance>                                                                                                                                                                
+				</typ:entity>                     
+			</typ:global-instance>
+		</typ:assess-request>
+	</soapenv:Body>
+</soapenv:Envelope>
+
+Response
+
+<SOAP-ENV:Envelope xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/" xmlns:i18n="http://www.w3.org/2005/09/ws-i18n" xmlns:typ="http://oracle.com/determinations/server/12.2.1/rulebase/assess/types">
+	<SOAP-ENV:Header>
+		<i18n:international>
+			<i18n:locale>en_US</i18n:locale>
+			<i18n:tz>Etc/GMT</i18n:tz>
+		</i18n:international>
+	</SOAP-ENV:Header>
+	<SOAP-ENV:Body>
+		<typ:assess-response>
+			<typ:global-instance>
+				<typ:attribute id="systemDateTime" type="datetime">
+					<typ:datetime-val>2019-07-10T17:03:49</typ:datetime-val>
+				</typ:attribute>
+				<typ:attribute id="operation" type="text">
+					<typ:text-val>Confirmation</typ:text-val>
+				</typ:attribute>
+				<typ:attribute id="debugging" type="boolean">
+					<typ:boolean-val>false</typ:boolean-val>
+				</typ:attribute>
+				<typ:entity id="line_item_input" inferred="false">
+					<typ:instance id="11">
+						<typ:attribute id="line_item_input" type="number">
+							<typ:number-val>11.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount" type="text">
+							<typ:text-val>777</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode" type="text">
+							<typ:text-val>305610600010072003815001919600381500191968</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon" type="text">
+							<typ:text-val>111</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService" type="text">
+							<typ:text-val>AAA</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher" type="text">
+							<typ:text-val>aaa</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount" type="number">
+							<typ:number-val>100.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate" type="date">
+							<typ:date-val>2019-10-24</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId" type="text">
+							<typ:text-val>12</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="67bb8f1e-6c4a-4955-b373-d5d893abb915" inferred="true">
+							<typ:instance id="0x1b8a62c40bff3f64">
+								<typ:entity id="079cd8df-fe45-4368-8e38-56391c9452d1" inferred="true">
+									<typ:instance id="0x4ebcdacc195fcf7c"/>
+									<typ:instance id="0x48c4b69cc52534bc"/>
+									<typ:instance id="0x8849dd8858e2d51d"/>
+									<typ:instance id="0x959d653a13de6451"/>
+									<typ:instance id="0x13c89d803ac0eb8a"/>
+									<typ:instance id="0x4296741d79242a5b"/>
+									<typ:instance id="0x1e957b61c0397fe"/>
+									<typ:instance id="0x1b29a19c4b41b634"/>
+									<typ:instance id="0x3c333e8fc4c843da"/>
+									<typ:instance id="0x636a61b1b6d9985d"/>
+									<typ:instance id="0x725a7b7fc48e1505"/>
+									<typ:instance id="0x196f1f613954f3fc"/>
+									<typ:instance id="0x8bcfbb9433b74d5"/>
+									<typ:instance id="0xd81fef1bbd28a431"/>
+									<typ:instance id="0x2ca0c4a86159e96f"/>
+									<typ:instance id="0x6d794972f02d7f34"/>
+									<typ:instance id="0x6721a861d5b8a390"/>
+									<typ:instance id="0xefc902f343b554ff"/>
+									<typ:instance id="0x27c390d501d315c0"/>
+									<typ:instance id="0x2e578a46ca44452e"/>
+									<typ:instance id="0x6c3aa320ff3483c9"/>
+									<typ:instance id="0x29a5482da8b2afe4"/>
+									<typ:instance id="0xb9ba0529a11fd03e"/>
+									<typ:instance id="0x6916e5dbe0a5e118"/>
+									<typ:instance id="0xe0c5bacdda9491cc"/>
+									<typ:instance id="0xcaf5b1fbf88cc31b"/>
+									<typ:instance id="0xc7dd754955a977f"/>
+									<typ:instance id="0x4014ad90307212f3"/>
+									<typ:instance id="0x1d33e81abdeb83b6"/>
+									<typ:instance id="0xaf49491331d21d42"/>
+									<typ:instance id="0xbb100a37c439ca3c"/>
+									<typ:instance id="0x4a00f846b639d9b6"/>
+									<typ:instance id="0x342e63b79d16a481"/>
+									<typ:instance id="0x88f5bf0a95962be8"/>
+									<typ:instance id="0x61f8ce6160f80165"/>
+									<typ:instance id="0x637e65e016020bf4"/>
+									<typ:instance id="0x6c1dc64f559caeb6"/>
+									<typ:instance id="0xc3748e5ca57b039f"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="3742cf60-1646-494f-8fe9-3fc8cdcf00c3" inferred="true">
+							<typ:instance id="0xb19218ea61241dad">
+								<typ:entity id="a7e84e9a-f150-4883-a30e-fbbf3d271df7" inferred="true">
+									<typ:instance id="0x5bdc1378faffcddb"/>
+									<typ:instance id="0x8bf95848baf5a0ec"/>
+									<typ:instance id="0xcc487145e7d0961c"/>
+									<typ:instance id="0xd8bb5026c334b123"/>
+									<typ:instance id="0xde6473c0effffbc7"/>
+									<typ:instance id="0x9ed131d1df5bff83"/>
+									<typ:instance id="0x5a13288b7698ade"/>
+									<typ:instance id="0xb6bfc3b774a8654a"/>
+									<typ:instance id="0x2262fd663e02f992"/>
+									<typ:instance id="0x98c07a7f1cfd27cb"/>
+									<typ:instance id="0x6c41702458388630"/>
+									<typ:instance id="0xa5ee238f5c8bbdb3"/>
+									<typ:instance id="0xd3b4199d46cf131b"/>
+									<typ:instance id="0xf1a424f48e1ee16b"/>
+									<typ:instance id="0x91ddd506f5d94019"/>
+									<typ:instance id="0xf2435582fcc99395"/>
+									<typ:instance id="0x2b8f1959a7766d54"/>
+									<typ:instance id="0xdaa41a90e72e7fc0"/>
+									<typ:instance id="0xa290fe45371b282f"/>
+									<typ:instance id="0xfaca131a353195b0"/>
+									<typ:instance id="0x35696db59fca9b1b"/>
+									<typ:instance id="0x561d77af366ba746"/>
+									<typ:instance id="0xe03ee0bd71e245dc"/>
+									<typ:instance id="0x116cbc932d7477c6"/>
+									<typ:instance id="0xb21488bcb55dc444"/>
+									<typ:instance id="0x8b2adf74b582c4fd"/>
+									<typ:instance id="0x578a276ccd3f16b8"/>
+									<typ:instance id="0xc57d074224c0d255"/>
+									<typ:instance id="0xb14f5d33a9da1d2f"/>
+									<typ:instance id="0x5e771774b983ac7b"/>
+									<typ:instance id="0x37c9e9466549af21"/>
+									<typ:instance id="0x95cff7db5886621b"/>
+									<typ:instance id="0xcc4fe989e1ed6399"/>
+									<typ:instance id="0xc57a81d82def33e9"/>
+									<typ:instance id="0x893140ca07cdebdd"/>
+									<typ:instance id="0x8c6ceb23f3cbfab8"/>
+									<typ:instance id="0xecfcf2ef4ba2bc4"/>
+									<typ:instance id="0xa4954f255d197a34"/>
+									<typ:instance id="0xd73cb5a7c4937208"/>
+									<typ:instance id="0x2d568a5144f51ce5"/>
+									<typ:instance id="0x453947b71a2b8bd9"/>
+									<typ:instance id="0x680b1d3f15eec975"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="line_item_input_additional_data" inferred="false">
+							<typ:instance id="11-Dato Adicional 1">
+								<typ:attribute id="line_item_input_additional_data" type="text">
+									<typ:text-val>Dato Adicional 1</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataType" type="text">
+									<typ:text-val>String</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataStringValue" type="text">
+									<typ:text-val>Valor Dato Adicional 1</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="11-Dato Adicional 2">
+								<typ:attribute id="line_item_input_additional_data" type="text">
+									<typ:text-val>Dato Adicional 2</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataType" type="text">
+									<typ:text-val>List</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataListValue" type="text">
+									<typ:text-val>Valor Dato Adicional 1</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="11-Dato Adicional 3">
+								<typ:attribute id="line_item_input_additional_data" type="text">
+									<typ:text-val>Dato Adicional 3</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataType" type="text">
+									<typ:text-val>Number</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_input_additional_dataNumberValue" type="number">
+									<typ:number-val>1123.0</typ:number-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="12">
+						<typ:attribute id="line_item_input" type="number">
+							<typ:number-val>12.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount" type="text">
+							<typ:text-val>2345</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode" type="text">
+							<typ:text-val>026500038665192050845220190610000001280763</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon" type="text">
+							<typ:text-val>222</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService" type="text">
+							<typ:text-val>BBB</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher" type="text">
+							<typ:text-val>bbb</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount" type="number">
+							<typ:number-val>200.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate" type="date">
+							<typ:date-val>2019-10-25</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId" type="text">
+							<typ:text-val>13</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="67bb8f1e-6c4a-4955-b373-d5d893abb915" inferred="true">
+							<typ:instance id="0xe30da36ec6d4c407">
+								<typ:entity id="079cd8df-fe45-4368-8e38-56391c9452d1" inferred="true">
+									<typ:instance id="0x52a46774d6cd0f9a"/>
+									<typ:instance id="0xbeacc530b0608be"/>
+									<typ:instance id="0xea06e038d21f82d0"/>
+									<typ:instance id="0xeb7f4593e575d196"/>
+									<typ:instance id="0x9399e8a2e6e74991"/>
+									<typ:instance id="0x6e916e9ca1e9b5f5"/>
+									<typ:instance id="0x2f8f2f487c712573"/>
+									<typ:instance id="0x981e903f242a3ca9"/>
+									<typ:instance id="0x9db181038466067a"/>
+									<typ:instance id="0x3314e133ad2e742"/>
+									<typ:instance id="0x4a3621be8a603afb"/>
+									<typ:instance id="0x4e013e118d8249c"/>
+									<typ:instance id="0x69de70f67539b50b"/>
+									<typ:instance id="0x5ae446e52915035e"/>
+									<typ:instance id="0xaab049fcec5f8f62"/>
+									<typ:instance id="0xe2372db918315ee8"/>
+									<typ:instance id="0x5711c451992e0858"/>
+									<typ:instance id="0xc83c00cd4ce510ec"/>
+									<typ:instance id="0xa506d02639c8e8e7"/>
+									<typ:instance id="0xe192233583b8b010"/>
+									<typ:instance id="0x7b67abd569e69353"/>
+									<typ:instance id="0xc14ae111df2c8b4b"/>
+									<typ:instance id="0x762aeef59356b82d"/>
+									<typ:instance id="0x65924bf0539560d6"/>
+									<typ:instance id="0x2168037ea3d2ebe0"/>
+									<typ:instance id="0xcc958a2ad696dbee"/>
+									<typ:instance id="0x300fc30e6a93afb0"/>
+									<typ:instance id="0xd2783c64b36c047b"/>
+									<typ:instance id="0xaf8dc4b55f76e141"/>
+									<typ:instance id="0xb73a4a9b5bf7cbd2"/>
+									<typ:instance id="0xdc0d1c734ab227"/>
+									<typ:instance id="0xdd040a079e1a626b"/>
+									<typ:instance id="0xc72f0ceff4f619fd"/>
+									<typ:instance id="0xab40d2ad240fa883"/>
+									<typ:instance id="0x9f99cfc9e6e4cb85"/>
+									<typ:instance id="0xe606a13a3bb89263"/>
+									<typ:instance id="0xef438ae032d0f0e0"/>
+									<typ:instance id="0x3c015d25080cfb9e"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="3742cf60-1646-494f-8fe9-3fc8cdcf00c3" inferred="true">
+							<typ:instance id="0x77ded578377a3d6f">
+								<typ:entity id="a7e84e9a-f150-4883-a30e-fbbf3d271df7" inferred="true">
+									<typ:instance id="0xc755f8a0392440d6"/>
+									<typ:instance id="0x977072c6e26ed22b"/>
+									<typ:instance id="0xa47a9bb09e4bd21d"/>
+									<typ:instance id="0xe273495dc6c791e9"/>
+									<typ:instance id="0xcb6a1bfd03a81b04"/>
+									<typ:instance id="0xa3cb025fee51bddc"/>
+									<typ:instance id="0xfafa3fc7c6295667"/>
+									<typ:instance id="0xafd69911336bf7a7"/>
+									<typ:instance id="0xf64dcc77c2af521e"/>
+									<typ:instance id="0xd0e546cfe5a3bfbc"/>
+									<typ:instance id="0x1a49fbf8bd799a9b"/>
+									<typ:instance id="0xea0196a836220b07"/>
+									<typ:instance id="0x507b5e2fb686bd8b"/>
+									<typ:instance id="0xe22c9b0b37328497"/>
+									<typ:instance id="0xc81dd70a6af97cd3"/>
+									<typ:instance id="0x827d8bcba8bfd052"/>
+									<typ:instance id="0xf9a03deb8f8cd6f7"/>
+									<typ:instance id="0xcbb352a66dcc50a5"/>
+									<typ:instance id="0xc8ba465dc18d0149"/>
+									<typ:instance id="0x466f9579c4346ea0"/>
+									<typ:instance id="0xa6e47ba94e482f4f"/>
+									<typ:instance id="0x4988f4f19164d64e"/>
+									<typ:instance id="0x5aabd90a23110763"/>
+									<typ:instance id="0xb1f989eea29e1b7b"/>
+									<typ:instance id="0xaadfebf07ef3347b"/>
+									<typ:instance id="0x3578a2fbfc21f45c"/>
+									<typ:instance id="0x4a8772dc322666a5"/>
+									<typ:instance id="0xe1d268647e741719"/>
+									<typ:instance id="0xdae1ed10d6a8e6f8"/>
+									<typ:instance id="0xe11ffc74c2c91426"/>
+									<typ:instance id="0x106fe2ff5663ac66"/>
+									<typ:instance id="0x8d38b3f26b5f51e4"/>
+									<typ:instance id="0xf9f3bc01c82335b3"/>
+									<typ:instance id="0x337fa75ffe0df09b"/>
+									<typ:instance id="0x4e6723101d225d9b"/>
+									<typ:instance id="0xe6946d9d647707f9"/>
+									<typ:instance id="0x9c0e6b2ce18398c3"/>
+									<typ:instance id="0x34035536b22e82c8"/>
+									<typ:instance id="0x60b0a194247ef922"/>
+									<typ:instance id="0xf583681f2248f9e9"/>
+									<typ:instance id="0x803880d5d7c7ee28"/>
+									<typ:instance id="0x641515010cf60d5a"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="13">
+						<typ:attribute id="line_item_input" type="number">
+							<typ:number-val>13.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount" type="text">
+							<typ:text-val>3456</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode" type="text">
+							<typ:text-val>790211495502766866071220181010596000120180002003600020</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon" type="text">
+							<typ:text-val>333</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService" type="text">
+							<typ:text-val>CCC</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher" type="text">
+							<typ:text-val>ccc</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount" type="number">
+							<typ:number-val>300.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate" type="date">
+							<typ:date-val>2019-10-26</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId" type="text">
+							<typ:text-val>25</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="67bb8f1e-6c4a-4955-b373-d5d893abb915" inferred="true">
+							<typ:instance id="0x2ebefb9f53981ef9">
+								<typ:entity id="079cd8df-fe45-4368-8e38-56391c9452d1" inferred="true">
+									<typ:instance id="0x924b17ff68e2eb65"/>
+									<typ:instance id="0x20ce601b0ec41fad"/>
+									<typ:instance id="0xf3c3ba31c43e77e"/>
+									<typ:instance id="0xfd2b1959051f3530"/>
+									<typ:instance id="0x90d03c85b818c1e8"/>
+									<typ:instance id="0x90ca38443a40cafb"/>
+									<typ:instance id="0xd136395348ce7b10"/>
+									<typ:instance id="0x73634a4c2d46542f"/>
+									<typ:instance id="0xd6f889d1b4b62da1"/>
+									<typ:instance id="0x4c4c24ae74bd014e"/>
+									<typ:instance id="0xb407ff52a3699bf4"/>
+									<typ:instance id="0xf739f374b14ad426"/>
+									<typ:instance id="0x97660260a003d228"/>
+									<typ:instance id="0x143c651a6262355c"/>
+									<typ:instance id="0xf513d2143042c55e"/>
+									<typ:instance id="0x1460c7ede8e9448e"/>
+									<typ:instance id="0xb7d6a1375240fc93"/>
+									<typ:instance id="0xc8f438957e943f2b"/>
+									<typ:instance id="0xb7c599a04849df0e"/>
+									<typ:instance id="0x776ee47702ee44ac"/>
+									<typ:instance id="0x782d80e1fad2e341"/>
+									<typ:instance id="0x6635bb14528a8418"/>
+									<typ:instance id="0xd4320c06dc902f62"/>
+									<typ:instance id="0x5f2a841af115946"/>
+									<typ:instance id="0x4404416c1f6c583c"/>
+									<typ:instance id="0x7e4e825e8c1c566b"/>
+									<typ:instance id="0xbfa7899592d9e0b2"/>
+									<typ:instance id="0x87a384b87b96cda7"/>
+									<typ:instance id="0xacfae9cf563baf22"/>
+									<typ:instance id="0xc0065cb29a9ca428"/>
+									<typ:instance id="0x9fdc7eee2cd91e2e"/>
+									<typ:instance id="0x2915c422a17370ba"/>
+									<typ:instance id="0x9f0c897519493a52"/>
+									<typ:instance id="0x1ee02701163601bf"/>
+									<typ:instance id="0x76b543796e2584ec"/>
+									<typ:instance id="0x1553233e9abdf203"/>
+									<typ:instance id="0xff42b1db5557d181"/>
+									<typ:instance id="0xc34eb150908c66b0"/>
+									<typ:instance id="0xb73c180e2a21873"/>
+									<typ:instance id="0xa2b97b85357c89f"/>
+									<typ:instance id="0x6590aa9a8d51dccd"/>
+									<typ:instance id="0x2cd03514a7db609"/>
+									<typ:instance id="0xd86184fad21c4f0"/>
+									<typ:instance id="0x812f8b58cf00bed2"/>
+									<typ:instance id="0x28caa0d70916294c"/>
+									<typ:instance id="0xe50753737d07d6cc"/>
+									<typ:instance id="0x9edf9d92c0c73723"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="3742cf60-1646-494f-8fe9-3fc8cdcf00c3" inferred="true">
+							<typ:instance id="0x426f529fb1388f44">
+								<typ:entity id="a7e84e9a-f150-4883-a30e-fbbf3d271df7" inferred="true">
+									<typ:instance id="0x99cebcb32bdc6dc"/>
+									<typ:instance id="0xd60331ad26d9b4ad"/>
+									<typ:instance id="0x4bfb4d8551b013b1"/>
+									<typ:instance id="0x75bf9eb66cb33366"/>
+									<typ:instance id="0x596621e87f31cb92"/>
+									<typ:instance id="0xa52229e9b33d18bd"/>
+									<typ:instance id="0xf1aa8803cc0d60f8"/>
+									<typ:instance id="0xf5ee724dbc25e263"/>
+									<typ:instance id="0xc59e4b557dd7d5d0"/>
+									<typ:instance id="0xcf594e39eda30333"/>
+									<typ:instance id="0x71251008d1a3883"/>
+									<typ:instance id="0x176567d7bff8c634"/>
+									<typ:instance id="0x54b0a8020987b3eb"/>
+									<typ:instance id="0x69e53af0f3301782"/>
+									<typ:instance id="0xa1b3a6703525fe1"/>
+									<typ:instance id="0x315ae1f93a4b07a3"/>
+									<typ:instance id="0x348dc71ba739d78f"/>
+									<typ:instance id="0xff199d5d5872e040"/>
+									<typ:instance id="0x9c8353d3a8ced6ec"/>
+									<typ:instance id="0x1184fd29dd3d8b0d"/>
+									<typ:instance id="0xf6f5835f016da397"/>
+									<typ:instance id="0x24855def967bb858"/>
+									<typ:instance id="0xc95a2d7a97e1e4d9"/>
+									<typ:instance id="0xeb2c714b39c3a0d8"/>
+									<typ:instance id="0x6e903590c70f5365"/>
+									<typ:instance id="0xd45e331925d64242"/>
+									<typ:instance id="0x88881604ad82c3b5"/>
+									<typ:instance id="0xc687dd264eff7e9e"/>
+									<typ:instance id="0x7a6b2820782fdea2"/>
+									<typ:instance id="0xee0a1bd31681c522"/>
+									<typ:instance id="0x28027ce63aa59f02"/>
+									<typ:instance id="0xa9a19112545d1e25"/>
+									<typ:instance id="0x3eda08d08ea68b48"/>
+									<typ:instance id="0xc129f96e067388d2"/>
+									<typ:instance id="0x91ee2192313d9b61"/>
+									<typ:instance id="0xe5ec5e629d953887"/>
+									<typ:instance id="0xcdc4d99c21e768fe"/>
+									<typ:instance id="0x30add2016ea2e4a1"/>
+									<typ:instance id="0x5b224c83bb3d7732"/>
+									<typ:instance id="0xf2412685d8db29b4"/>
+									<typ:instance id="0xf7735ddb76e72276"/>
+									<typ:instance id="0xf2a0c5210689dfc5"/>
+									<typ:instance id="0x81f6c0935b19bf20"/>
+									<typ:instance id="0x6a4fff3aad1ebe3a"/>
+									<typ:instance id="0x37563aa278fefaf3"/>
+									<typ:instance id="0x41d4de11e575c843"/>
+									<typ:instance id="0x7a1cbcf9543f2dd8"/>
+									<typ:instance id="0x172df7ed77740fd5"/>
+									<typ:instance id="0xa420aaa91b8cd449"/>
+									<typ:instance id="0x2c15cab89c9a3eb0"/>
+									<typ:instance id="0xf8948d771b73b6bb"/>
+									<typ:instance id="0xc36f016d7a792006"/>
+									<typ:instance id="0x8aa90290976f20a1"/>
+									<typ:instance id="0xa144d62e3095284a"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="14">
+						<typ:attribute id="line_item_input" type="number">
+							<typ:number-val>14.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAccount" type="text">
+							<typ:text-val>4567</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputBarcode" type="text">
+							<typ:text-val>679YT5W0002091808071900000000005</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCoupon" type="text">
+							<typ:text-val>444</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputProductService" type="text">
+							<typ:text-val>DDD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputVoucher" type="text">
+							<typ:text-val>ddd</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount" type="number">
+							<typ:number-val>400.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDueDate" type="date">
+							<typ:date-val>2019-10-27</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDealId" type="text">
+							<typ:text-val>10</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="67bb8f1e-6c4a-4955-b373-d5d893abb915" inferred="true">
+							<typ:instance id="0x2710ab29cf6aba57">
+								<typ:entity id="079cd8df-fe45-4368-8e38-56391c9452d1" inferred="true">
+									<typ:instance id="0xbd1e42b6a3d8fe7e"/>
+									<typ:instance id="0x8155c6220e23ea50"/>
+									<typ:instance id="0xb610514dce65dfc5"/>
+									<typ:instance id="0xca96037d06a7b366"/>
+									<typ:instance id="0xb1492b6287e8eca4"/>
+									<typ:instance id="0xd3e5fca6e507b70b"/>
+									<typ:instance id="0x6db3fc1e47e9b39b"/>
+									<typ:instance id="0xf4a5cbc8866592f6"/>
+									<typ:instance id="0x3aeadbf2db60c2ef"/>
+									<typ:instance id="0xce27afcf486656dc"/>
+									<typ:instance id="0xf59129b223606790"/>
+									<typ:instance id="0x61545b6cf1bc2fa7"/>
+									<typ:instance id="0xbe7e36c992a2ddf9"/>
+									<typ:instance id="0xbc9653155cb63d6a"/>
+									<typ:instance id="0xfd0c87ee3c2686ab"/>
+									<typ:instance id="0xf087cb2e58c0025b"/>
+									<typ:instance id="0x64556f9bdcf927db"/>
+									<typ:instance id="0xda7f04d4300116ee"/>
+									<typ:instance id="0x7373a3018f355464"/>
+									<typ:instance id="0x7bcb671ea14ff7a6"/>
+									<typ:instance id="0x47fc8f09b9200549"/>
+									<typ:instance id="0xe6f3f333deff987e"/>
+									<typ:instance id="0x6555114080aea61c"/>
+									<typ:instance id="0xce879ad0118b07a5"/>
+									<typ:instance id="0xdcd7679189273468"/>
+									<typ:instance id="0x9636c1908303a088"/>
+									<typ:instance id="0xe4140a6013176515"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="3742cf60-1646-494f-8fe9-3fc8cdcf00c3" inferred="true">
+							<typ:instance id="0x56f0ff12f0bc9f02">
+								<typ:entity id="a7e84e9a-f150-4883-a30e-fbbf3d271df7" inferred="true">
+									<typ:instance id="0xae7faab9731b498b"/>
+									<typ:instance id="0x15632f7936b1b823"/>
+									<typ:instance id="0xad1917951a123d34"/>
+									<typ:instance id="0x636362ed9e10c685"/>
+									<typ:instance id="0x612b7de5028ec1f5"/>
+									<typ:instance id="0x27784be9e762192d"/>
+									<typ:instance id="0x716d238709a9a1c3"/>
+									<typ:instance id="0x363150034e534bcf"/>
+									<typ:instance id="0xfb93f94c058eb1fd"/>
+									<typ:instance id="0x2bcf3c9bd55a127d"/>
+									<typ:instance id="0x5eef1d1847112ed9"/>
+									<typ:instance id="0x17e952da3454c2f3"/>
+									<typ:instance id="0x3420a716575aa3ec"/>
+									<typ:instance id="0x991e91b86be53a47"/>
+									<typ:instance id="0xefe4d70b57954308"/>
+									<typ:instance id="0xf2dfd1f539a89492"/>
+									<typ:instance id="0x6c066a9a2da3d4f4"/>
+									<typ:instance id="0xc6168f9656747fb9"/>
+									<typ:instance id="0x43da81c21a7cbea4"/>
+									<typ:instance id="0xc35f4403124210e"/>
+									<typ:instance id="0x677ba45f5b4965a7"/>
+									<typ:instance id="0xd402b67afd660d26"/>
+									<typ:instance id="0x5b627298a1cde248"/>
+									<typ:instance id="0xbf305dc4e06c78cb"/>
+									<typ:instance id="0xa9879ffde17112e6"/>
+									<typ:instance id="0x6be6a629f0729a1d"/>
+									<typ:instance id="0x7f53cc27fd3b41db"/>
+									<typ:instance id="0x2dd49ba492f1fdf"/>
+									<typ:instance id="0xd9437725c23b4c0a"/>
+									<typ:instance id="0x4a073c5866037b26"/>
+									<typ:instance id="0x798575d4dd1184ce"/>
+									<typ:instance id="0x991b2a90a552e63d"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="15">
+						<typ:attribute id="line_item_input" type="number">
+							<typ:number-val>15.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType" type="text">
+							<typ:text-val>Tender</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputAmount" type="number">
+							<typ:number-val>1000.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputTenderType" type="text">
+							<typ:text-val>PEI</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputDebitCredit" type="text">
+							<typ:text-val>Credit</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="67bb8f1e-6c4a-4955-b373-d5d893abb915" inferred="true">
+							<typ:instance id="0x847957ab8c2a3a28">
+								<typ:entity id="079cd8df-fe45-4368-8e38-56391c9452d1" inferred="true">
+									<typ:instance id="0x84c258a96f2f6cab"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="3742cf60-1646-494f-8fe9-3fc8cdcf00c3" inferred="true">
+							<typ:instance id="0xf221f412d8c96209">
+								<typ:entity id="a7e84e9a-f150-4883-a30e-fbbf3d271df7" inferred="true">
+									<typ:instance id="0xf32812111910ad15"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="16">
+						<typ:attribute id="line_item_input" type="number">
+							<typ:number-val>16.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_item_inputType" type="text">
+							<typ:text-val>Service Charge</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="67bb8f1e-6c4a-4955-b373-d5d893abb915" inferred="true">
+							<typ:instance id="0x8b9465d9e63ed4fb">
+								<typ:entity id="079cd8df-fe45-4368-8e38-56391c9452d1" inferred="true">
+									<typ:instance id="0x31d273f669093199"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="3742cf60-1646-494f-8fe9-3fc8cdcf00c3" inferred="true">
+							<typ:instance id="0x150135c558bf4d13">
+								<typ:entity id="a7e84e9a-f150-4883-a30e-fbbf3d271df7" inferred="true">
+									<typ:instance id="0x1c6cd5dbe0baec91"/>
+								</typ:entity>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="master_deal" inferred="false">
+					<typ:instance id="1">
+						<typ:attribute id="master_deal" type="number">
+							<typ:number-val>1.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealType" type="text">
+							<typ:text-val>Tender</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="2">
+						<typ:attribute id="master_deal" type="number">
+							<typ:number-val>2.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealType" type="text">
+							<typ:text-val>Service Charge</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="10">
+						<typ:attribute id="master_deal" type="number">
+							<typ:number-val>10.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyCalcMethod" type="text">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealMinimumAmount" type="text">
+							<typ:text-val>20</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealMaximumAmount" type="text">
+							<typ:text-val>200</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue" type="number">
+							<typ:number-val>638.93</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue" type="number">
+							<typ:number-val>538.93</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue" type="number">
+							<typ:number-val>1.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue" type="number">
+							<typ:number-val>2.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue" type="number">
+							<typ:number-val>238.93</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIMigrated" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealOpenAmount" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIPrepaidCategory" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount1" type="number">
+							<typ:number-val>100.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount2" type="number">
+							<typ:number-val>10.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAlgorithm" type="text">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargePercentage" type="number">
+							<typ:number-val>2.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId" type="text">
+							<typ:text-val>10</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode" type="text">
+							<typ:text-val>cl10code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealEffectiveDate" type="date">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealExpirationDate" type="date">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierName" type="text">
+							<typ:text-val>Supplier10</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierWUClassification" type="text">
+							<typ:text-val>SupplierClassif10</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName" type="text">
+							<typ:text-val>cl10codename</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealFirstExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSecondExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealThirdExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCD" type="text">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealWithoutInvoice" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:entity id="master_deal_tender_allowed" inferred="false">
+							<typ:instance id="10-Efectivo">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="10-PEI">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="master_deal_currency_allowed" inferred="false">
+							<typ:instance id="10-PES">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="10-USD">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="12">
+						<typ:attribute id="master_deal" type="number">
+							<typ:number-val>12.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyCalcMethod" type="text">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealMinimumAmount" type="text">
+							<typ:text-val>chau</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealMaximumAmount" type="text">
+							<typ:text-val>hola</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue" type="number">
+							<typ:number-val>638.93</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue" type="number">
+							<typ:number-val>538.93</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue" type="number">
+							<typ:number-val>238.93</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIMigrated" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealOpenAmount" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIPrepaidCategory" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount1" type="number">
+							<typ:number-val>120.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount2" type="number">
+							<typ:number-val>12.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAlgorithm" type="text">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargePercentage" type="number">
+							<typ:number-val>2.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId" type="text">
+							<typ:text-val>12</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode" type="text">
+							<typ:text-val>cl12code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealEffectiveDate" type="date">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealExpirationDate" type="date">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierName" type="text">
+							<typ:text-val>Supplier12</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierWUClassification" type="text">
+							<typ:text-val>SupplierClassif12</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName" type="text">
+							<typ:text-val>cl12codename</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealFirstExpirationAllowed" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSecondExpirationAllowed" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealThirdExpirationAllowed" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCD" type="text">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealWithoutInvoice" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:entity id="master_deal_tender_allowed" inferred="false">
+							<typ:instance id="12-Efectivo">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="12-PEI">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="master_deal_currency_allowed" inferred="false">
+							<typ:instance id="12-PES">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="12-USD">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="master_deal_additional_data" inferred="false">
+							<typ:instance id="12-Dato Adicional 1">
+								<typ:attribute id="master_deal_additional_data" type="text">
+									<typ:text-val>Dato Adicional</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="master_deal_additional_dataType" type="text">
+									<typ:text-val>String</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="13">
+						<typ:attribute id="master_deal" type="number">
+							<typ:number-val>13.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyCalcMethod" type="text">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealMinimumAmount" type="text">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="master_dealMaximumAmount" type="text">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue" type="number">
+							<typ:number-val>200.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue" type="number">
+							<typ:number-val>180.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue" type="number">
+							<typ:number-val>100.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIMigrated" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealOpenAmount" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIPrepaidCategory" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount1" type="number">
+							<typ:number-val>130.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount2" type="number">
+							<typ:number-val>13.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAlgorithm" type="text">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargePercentage" type="number">
+							<typ:number-val>2.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId" type="text">
+							<typ:text-val>13</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode" type="text">
+							<typ:text-val>cl13code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealEffectiveDate" type="date">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealExpirationDate" type="date">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierName" type="text">
+							<typ:text-val>Supplier13</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierWUClassification" type="text">
+							<typ:text-val>SupplierClassif13</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName" type="text">
+							<typ:text-val>cl13codename</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealFirstExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSecondExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealThirdExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCD" type="text">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealWithoutInvoice" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:entity id="master_deal_tender_allowed" inferred="false">
+							<typ:instance id="13-Efectivo">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="13-PEI">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="master_deal_currency_allowed" inferred="false">
+							<typ:instance id="13-PES">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="13-USD">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="25">
+						<typ:attribute id="master_deal" type="number">
+							<typ:number-val>25.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyID" type="text">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealCurrencyCalcMethod" type="text">
+							<typ:text-val>-</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealMinimumAmount" type="text">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="master_dealMaximumAmount" type="text">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount3FixedValue" type="number">
+							<typ:number-val>200.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount2FixedValue" type="number">
+							<typ:number-val>180.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta1FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta3FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDDueDateDelta2FixedValue" type="number">
+							<typ:number-val>3.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCDAdditionalAmount1FixedValue" type="number">
+							<typ:number-val>100.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIMigrated" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealOpenAmount" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIPrepaidCategory" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealType" type="text">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount1" type="number">
+							<typ:number-val>250.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAmount2" type="number">
+							<typ:number-val>25.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargeAlgorithm" type="text">
+							<typ:text-val>Standard</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealServiceChargePercentage" type="number">
+							<typ:number-val>2.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIWUExternalId" type="text">
+							<typ:text-val>25</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationCode" type="text">
+							<typ:text-val>cl25code</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealEffectiveDate" type="date">
+							<typ:date-val>2018-01-01</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealExpirationDate" type="date">
+							<typ:date-val>2020-12-31</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierName" type="text">
+							<typ:text-val>Supplier25</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierStatus" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSupplierWUClassification" type="text">
+							<typ:text-val>SupplierClassif25</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSIClassificationName" type="text">
+							<typ:text-val>cl25codename</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealFirstExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealSecondExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealThirdExpirationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealBCD" type="text">
+							<typ:text-val>BCD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="master_dealWithoutInvoice" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:entity id="master_deal_tender_allowed" inferred="false">
+							<typ:instance id="25-Efectivo">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="25-PEI">
+								<typ:attribute id="master_deal_tender_allowed" type="text">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="master_deal_currency_allowed" inferred="false">
+							<typ:instance id="25-PES">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="25-USD">
+								<typ:attribute id="master_deal_currency_allowed" type="text">
+									<typ:text-val>USD</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="line_item" inferred="true">
+					<typ:instance id="0x310b90835c43bcad">
+						<typ:attribute id="line_itemTenderType" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemVoucher" type="text" inferred="true">
+							<typ:text-val>aaa</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCoupon" type="text" inferred="true">
+							<typ:text-val>111</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemBarcode" type="text" inferred="true">
+							<typ:text-val>305610600010072003815001919600381500191968</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item" type="number" inferred="true">
+							<typ:number-val>11.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemType" type="text" inferred="true">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMinimumAmount" type="number" inferred="true">
+							<typ:number-val>0.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemProductService" type="text" inferred="true">
+							<typ:text-val>AAA</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemOpenCloseAmount" type="boolean" inferred="true">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDealId" type="number" inferred="true">
+							<typ:number-val>12.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemServiceCharge" type="number" inferred="true">
+							<typ:number-val>14.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDateType" type="number" inferred="true">
+							<typ:number-val>1.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDate" type="date" inferred="true">
+							<typ:date-val>2019-10-24</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMaximumAmount" type="number" inferred="true">
+							<typ:number-val>9999999.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAmount" type="number" inferred="true">
+							<typ:number-val>100.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCurrencyID" type="text" inferred="true">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAccount" type="text" inferred="true">
+							<typ:text-val>777</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="line_item_error" inferred="true">
+							<typ:instance id="0x697de03c10644fea">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>ACCNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Identificación de cliente inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xc6c0fff520b2696">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>VOUCHER_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Voucher Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xe816742657f508d1">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>COUPON_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Cupón Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xbcd48e4a528396de">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>PRODSRV_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Producto/Servicio Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xab68ac2f6c47f923">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>CURRENCY_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Moneda Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x61df549d07d9deb2">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>DUE_DATE_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Fecha de Vencimiento Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x6bb13e12ba231cf8">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>AMOUNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>No puede cambiarse un monto cerrado</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x59293e3ae6858ad6">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>DUE_DATE1_NOTALLOWED</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:uncertain-val/>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x4b7cead373cc1e1b">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>ADD_DATA_INCOMPLETE</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:uncertain-val/>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="line_item_additional_data" inferred="true">
+							<typ:instance id="0x77fc8dd2a2b54d6b">
+								<typ:attribute id="line_item_additional_dataType" type="text" inferred="true">
+									<typ:text-val>String</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_additional_dataNumberValue" type="number" inferred="false">
+									<typ:unknown-val/>
+								</typ:attribute>
+								<typ:attribute id="line_item_additional_dataStringValue" type="text" inferred="false">
+									<typ:unknown-val/>
+								</typ:attribute>
+								<typ:attribute id="line_item_additional_data" type="text" inferred="true">
+									<typ:text-val>Dato Adicional</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_additional_dataListValue" type="text" inferred="false">
+									<typ:unknown-val/>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="0x2deff1200f7559d0">
+						<typ:attribute id="line_itemTenderType" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemVoucher" type="text" inferred="true">
+							<typ:text-val>bbb</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCoupon" type="text" inferred="true">
+							<typ:text-val>222</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemBarcode" type="text" inferred="true">
+							<typ:text-val>026500038665192050845220190610000001280763</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item" type="number" inferred="true">
+							<typ:number-val>12.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemType" type="text" inferred="true">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMinimumAmount" type="number" inferred="true">
+							<typ:number-val>0.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemProductService" type="text" inferred="true">
+							<typ:text-val>BBB</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemOpenCloseAmount" type="boolean" inferred="true">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDealId" type="number" inferred="true">
+							<typ:number-val>13.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemServiceCharge" type="number" inferred="true">
+							<typ:number-val>17.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDateType" type="number" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDate" type="date" inferred="true">
+							<typ:date-val>2019-10-25</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMaximumAmount" type="number" inferred="true">
+							<typ:number-val>9999999.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAmount" type="number" inferred="true">
+							<typ:number-val>200.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCurrencyID" type="text" inferred="true">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAccount" type="text" inferred="true">
+							<typ:text-val>2345</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="line_item_error" inferred="true">
+							<typ:instance id="0xc46f4739b8ca57d1">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>ACCNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Identificación de cliente inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xae6a9dd15c8202c5">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>VOUCHER_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Voucher Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x4f639a63fb5cc825">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>COUPON_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Cupón Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xcfe2010fdc1454e0">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>PRODSRV_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Producto/Servicio Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xd0266964728ca2ac">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>CURRENCY_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Moneda Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xd8538d6caa852864">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>DUE_DATE_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Fecha de Vencimiento Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xbda357f4765aa71b">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>AMOUNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>No puede cambiarse un monto cerrado</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="0x896d91a115c360be">
+						<typ:attribute id="line_itemTenderType" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemVoucher" type="text" inferred="true">
+							<typ:text-val>ccc</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCoupon" type="text" inferred="true">
+							<typ:text-val>333</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemBarcode" type="text" inferred="true">
+							<typ:text-val>790211495502766866071220181010596000120180002003600020</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item" type="number" inferred="true">
+							<typ:number-val>13.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemType" type="text" inferred="true">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMinimumAmount" type="number" inferred="true">
+							<typ:number-val>0.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemProductService" type="text" inferred="true">
+							<typ:text-val>CCC</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemOpenCloseAmount" type="boolean" inferred="true">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDealId" type="number" inferred="true">
+							<typ:number-val>25.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemServiceCharge" type="number" inferred="true">
+							<typ:number-val>31.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDateType" type="number" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDate" type="date" inferred="true">
+							<typ:date-val>2019-10-26</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMaximumAmount" type="number" inferred="true">
+							<typ:number-val>9999999.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAmount" type="number" inferred="true">
+							<typ:number-val>300.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCurrencyID" type="text" inferred="true">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAccount" type="text" inferred="true">
+							<typ:text-val>3456</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="line_item_error" inferred="true">
+							<typ:instance id="0xd5a9438b39d94be">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>ACCNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Identificación de cliente inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xeba664b7b3586f7a">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>VOUCHER_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Voucher Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xa9647e8c21595750">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>COUPON_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Cupón Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xc4b01691250728be">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>PRODSRV_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Producto/Servicio Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xbe559103d6fe8778">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>CURRENCY_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Moneda Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xbcaf987fd857262c">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>DUE_DATE_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Fecha de Vencimiento Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x14bc52059268b3fb">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>AMOUNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>No puede cambiarse un monto cerrado</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="0x101ac42d96e81f61">
+						<typ:attribute id="line_itemTenderType" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemVoucher" type="text" inferred="true">
+							<typ:text-val>ddd</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCoupon" type="text" inferred="true">
+							<typ:text-val>444</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemBarcode" type="text" inferred="true">
+							<typ:text-val>679YT5W0002091808071900000000005</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_item" type="number" inferred="true">
+							<typ:number-val>14.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemType" type="text" inferred="true">
+							<typ:text-val>Payment on Account</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMinimumAmount" type="number" inferred="true">
+							<typ:number-val>20.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemProductService" type="text" inferred="true">
+							<typ:text-val>DDD</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemOpenCloseAmount" type="boolean" inferred="true">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDealId" type="number" inferred="true">
+							<typ:number-val>10.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemServiceCharge" type="number" inferred="true">
+							<typ:number-val>18.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDateType" type="number" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDate" type="date" inferred="true">
+							<typ:date-val>2019-10-27</typ:date-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMaximumAmount" type="number" inferred="true">
+							<typ:number-val>200.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAmount" type="number" inferred="true">
+							<typ:number-val>400.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCurrencyID" type="text" inferred="true">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAccount" type="text" inferred="true">
+							<typ:text-val>4567</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="line_item_error" inferred="true">
+							<typ:instance id="0x20e9d8cff6a42143">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>ACCNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Identificación de cliente inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0x6460f7e13d01e8ab">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>VOUCHER_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Voucher Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xebdd2810c7b9fe21">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>COUPON_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Cupón Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xcf34db46203a6dce">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>PRODSRV_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Producto/Servicio Inválido</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xfcb0699f26223568">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>CURRENCY_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Moneda Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xbd2c06bd7cc077cc">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>DUE_DATE_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Fecha de Vencimiento Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xd632e9dd35c4d9d">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>AMOUNT_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>No puede cambiarse un monto cerrado</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="0xd1925db8910bb4ef">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>AMOUNT_OUTLIMIT</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Monto fuera de los límites</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+					<typ:instance id="0x36888bce6abfd9e4">
+						<typ:attribute id="line_itemTenderType" type="text" inferred="true">
+							<typ:text-val>PEI</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemVoucher" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemCoupon" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemBarcode" type="text" inferred="false">
+							<typ:unknown-val/>
+						</typ:attribute>
+						<typ:attribute id="line_item" type="number" inferred="true">
+							<typ:number-val>15.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemType" type="text" inferred="true">
+							<typ:text-val>Tender</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemMinimumAmount" type="number" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemProductService" type="text" inferred="true">
+							<typ:text-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemOpenCloseAmount" type="boolean" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemDealId" type="number" inferred="true">
+							<typ:number-val>1.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemServiceCharge" type="number" inferred="true">
+							<typ:number-val>10.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDateType" type="number" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemDueDate" type="date" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemMaximumAmount" type="number" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:attribute id="line_itemAmount" type="number" inferred="true">
+							<typ:number-val>1000.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemCurrencyID" type="text" inferred="true">
+							<typ:text-val>PES</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="line_itemAccount" type="text" inferred="true">
+							<typ:uncertain-val/>
+						</typ:attribute>
+						<typ:entity id="line_item_error" inferred="true">
+							<typ:instance id="0x68dc17dacea65672">
+								<typ:attribute id="line_item_error" type="text" inferred="true">
+									<typ:text-val>CURRENCY_INVALID</typ:text-val>
+								</typ:attribute>
+								<typ:attribute id="line_item_errorDescription" type="text" inferred="true">
+									<typ:text-val>Moneda Inválida</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="error" inferred="true">
+					<typ:instance id="0x7882814115f1107f">
+						<typ:attribute id="error" type="text" inferred="true">
+							<typ:text-val>WKST_INACTIVE</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="errorDescription" type="text" inferred="true">
+							<typ:text-val>Workstation inactiva</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="0x60736ab74801b7a2">
+						<typ:attribute id="error" type="text" inferred="true">
+							<typ:text-val>RS_INACTIVE</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="errorDescription" type="text" inferred="true">
+							<typ:text-val>Retail Store inactivo</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="0xbb6ad1c6ad42102a">
+						<typ:attribute id="error" type="text" inferred="true">
+							<typ:text-val>CORP_INACTIVE</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="errorDescription" type="text" inferred="true">
+							<typ:text-val>Corporate Organization inactiva</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="workstation" inferred="false">
+					<typ:instance id="100">
+						<typ:attribute id="workstation" type="number">
+							<typ:number-val>100.0</typ:number-val>
+						</typ:attribute>
+						<typ:attribute id="workstationEquipmentId" type="text">
+							<typ:text-val>AA</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="workstationExternalId" type="text">
+							<typ:text-val>11</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="workstationStatus" type="text">
+							<typ:text-val>Inactive</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="workstationTerminalStatusSOL" type="text">
+							<typ:text-val>Active</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="workstationType" type="text">
+							<typ:text-val>tipo</typ:text-val>
+						</typ:attribute>
+						<typ:entity id="workstation_tender" inferred="false">
+							<typ:instance id="Efectivo">
+								<typ:attribute id="workstation_tender" type="text">
+									<typ:text-val>Efectivo</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="PEI">
+								<typ:attribute id="workstation_tender" type="text">
+									<typ:text-val>PEI</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+						<typ:entity id="workstation_currency" inferred="false">
+							<typ:instance id="PES">
+								<typ:attribute id="workstation_currency" type="text">
+									<typ:text-val>PES</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+							<typ:instance id="EUR">
+								<typ:attribute id="workstation_currency" type="text">
+									<typ:text-val>EUR</typ:text-val>
+								</typ:attribute>
+							</typ:instance>
+						</typ:entity>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="Holiday" inferred="false">
+					<typ:instance id="2019-08-10">
+						<typ:attribute id="Holiday" type="date">
+							<typ:date-val>2019-08-10</typ:date-val>
+						</typ:attribute>
+					</typ:instance>
+					<typ:instance id="2019-12-31">
+						<typ:attribute id="Holiday" type="date">
+							<typ:date-val>2019-12-31</typ:date-val>
+						</typ:attribute>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="corporate_organization" inferred="false">
+					<typ:instance id="A">
+						<typ:attribute id="corporate_organization" type="text">
+							<typ:text-val>corporate name</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="corporate_organizationStatus" type="text">
+							<typ:text-val>Inactive</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+				</typ:entity>
+				<typ:entity id="retail_store" inferred="false">
+					<typ:instance id="A">
+						<typ:attribute id="retail_store" type="text">
+							<typ:text-val>A</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeName" type="text">
+							<typ:text-val>nombre retail</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeStatusCode" type="text">
+							<typ:text-val>AC</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeStatusName" type="text">
+							<typ:text-val>Inactive</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeTypeCode" type="text">
+							<typ:text-val>typecode1</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeTypeName" type="text">
+							<typ:text-val>typename</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeWUOwnFlag" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeGeographicSegment1" type="text">
+							<typ:text-val>geoseg1</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeGeographicSegment2" type="text">
+							<typ:text-val>geoseg2</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeGeographicSegment3" type="text">
+							<typ:text-val>geoseg3</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeGeographicSegment4" type="text">
+							<typ:text-val>geoseg4</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeGeographicSegment5" type="text">
+							<typ:text-val>geoseg5</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeClassificationCode" type="text">
+							<typ:text-val>classif</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeClassificationName" type="text">
+							<typ:text-val>classifname</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeConsiderHolidays" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeCancellationAllowed" type="boolean">
+							<typ:boolean-val>true</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeWithoutInvoice" type="boolean">
+							<typ:boolean-val>false</typ:boolean-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeOperationHoursBeginMtoF" type="text">
+							<typ:text-val>0900</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeOperationHoursEndMtoF" type="text">
+							<typ:text-val>1800</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeOperationHoursBeginSat" type="text">
+							<typ:text-val>0900</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeOperationHoursEndSat" type="text">
+							<typ:text-val>1800</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeOperationHoursBeginSun" type="text">
+							<typ:text-val>0900</typ:text-val>
+						</typ:attribute>
+						<typ:attribute id="retail_storeOperationHoursEndSun" type="text">
+							<typ:text-val>1800</typ:text-val>
+						</typ:attribute>
+					</typ:instance>
+				</typ:entity>
+			</typ:global-instance>
+		</typ:assess-response>
+	</SOAP-ENV:Body>
+</SOAP-ENV:Envelope>

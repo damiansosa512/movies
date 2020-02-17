@@ -1,3 +1,4 @@
+
 ***************************************************************************************************************************************************
 * Servicio que busca datos adicionales acerca de una factura que no contenga codigos de barras
 * La persona se acerca al operador de la pos, solicita pagar una factura, pero no tiene el codigo de barrar. El operador solicitara el SupplierItemId, 
