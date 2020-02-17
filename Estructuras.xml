@@ -1,0 +1,513 @@
+
+***************************************************************************************************************************************************
+* Servicio que busca datos adicionales acerca de una factura que no contenga codigos de barras
+* La persona se acerca al operador de la pos, solicita pagar una factura, pero no tiene el codigo de barrar. El operador solicitara el SupplierItemId, 
+  de la empresa. En la respuesta del servicio, nos proporcionara una lista de datos, que el operador de la Posnet debera completar para continuar el proceso.
+<SupplierItemLookupRequest>
+	<WUSupplierIDExternal/>	SACAR
+	
+	Opcional
+	<SupplierItemID/>
+	
+	Opcional
+	<QueryFieldList> 
+		<QueryField>
+			<Name/>
+			<Order/>
+			<Value/>
+		</QueryField>
+	</QueryFieldList>
+		
+</SupplierItemLookupRequest>
+
+<SupplierItemLookupResponse>				tns:SupplierItemLookupResponse/tns: SupplierItemLookupList/ tns:SupplierItemLookup/ tns:QueryFieldList
+	<BeginDateTimeTransaction/>
+	<SupplierItemLookupList>
+		<SupplierItemLookup>
+			<SupplierItemID/>
+			<Description/>
+
+			<QueryFieldList> (Siempre viene la primera vez)
+				<QueryField>
+					<Name/>
+					<Order/>
+					<Value/>
+				</QueryField>
+			</QueryFieldList>
+
+			<AdditionalDataFlag/> (tiene datos adiccionales o no) * NO VA
+			<DealType/> (para determinar si es payment o cashout)
+			<DebtsLookupOrderCapture/> (Si es true, la pos sigue PaymentOnAccountItemLookup, si no transaction validate) * NO VA
+			<PrepagoPospagoCategory/>	* NO VA
+			<QuantityofRetries/>		* NO VA
+			<Reversible/> Void(Cambia)	* NO VA
+			<ReversibleTimeLimit/>  Voidable(cambia)	* NO VA
+			<AdditionalDataList>	(puede venir o no)
+				<AdditionalData>
+					<Id/> AdditionalDataInventoryID(Cambia)
+					<Order/> *Generar*
+					<Title/> AdditionalDataInventoryName (No cambia)
+					<Help/>	Description (No cambia)
+					<Value/> Opcional (No cambia)
+					<Type> DataType (No cambia)
+				</AdditionalData>
+			</AdditionalDataList>
+		</SupplierItemLookup>
+	</SupplierItemLookupList>
+	<ErrorList>
+		<Error>
+			<ErrorCode>0</ErrorCode> ¡Agregamos desc?
+			<ErrorDescription/>					
+		</Error>	
+	</ErrorList>	
+</SupplierItemLookupResponse>
+***************************************************************************************************************************************************
+* Servicio que retorna la deuda de una persona con la entidad. 
+* El operador, luego de enviar los datos (sean los datos ingresados previamente o mediante el codigo de barras), obtiene los montos a pagar asi como
+  tambien los medios de pagos adheridos
+	<PaymentOnAccountItemLookupRequest>
+		<WUSupplierIDExternal/>  SACAR
+		<ScanData/> (Barcode opcional)
+		<DealID/> (choice con ScanData)
+		<Amount/>	Opcional (Segunda invocacion)
+		<Account/>	Opcional (Segunda invocacion)
+		<Currency>	Opcional (Segunda invocacion)
+			<CurrencyName/>
+			<CurrencyCode/>
+		</Currency>
+		<DueDate/>	Opcional (Segunda invocacion)
+		<BarcodeFinal/>	Opcional (Segunda invocacion)
+		<ProductService/>	Opcional (Segunda invocacion)
+		<Coupon/>			Opcional (Segunda invocacion)
+		<Voucher/>			Opcional (Segunda invocacion)
+		<DealID/>			Opcional (Segunda invocacion)			
+		<QueryFieldList> (Siempre viene la primera vez)
+			<QueryField>
+				<Name/>
+				<Order/>
+				<Value/>
+			</QueryField>
+		</QueryFieldList>	
+		<AdditionalDataList>
+			<AdditionalData>
+				<Id/>
+				<Order/>
+				<Title/>
+				<Help/>
+				<Value/>
+				<Type/>
+			</AdditionalData>
+		</AdditionalDataList>
+		<TenderList>	opcional (Segunda invocacion)
+			<Tender>
+				<TenderCode/> Modificar!!
+				<TenderName/> Agregar!!	  //Eliminar				
+			</Tender>
+		</TenderList>		
+	</PaymentOnAccountItemLookupRequest>
+	
+GetWorkstationTransactionDataResponse
+GetRetailStoreTransactionDataResponse
+GetCorporateOrganizationTransactionDataResponse
+GetHolidayTransactionDataResponse
+
+GetDealsTransactionDataResponse								GetCandidateDeals(ScanData, DealID)
+GetLineItemDealTransactionDataResponse						GetLineItemDealTransaction(DealId)
+GetDealsTransactionDataAvaiableResponse 					GetAvaiableCandidateDealsByCountry(ISOCountryCode)
+
+WU_P908 Design Specification IFP Wrapper BAS
+WU_P908 Design Specification IFP Wrapper BOB
+
+ http://pagofacil.com.ar/
+ 
+ Request/tns:TransactionValidateRequest/tns:PaymentOnAccountLineItemList/tns:PaymentOnAccountLineItem
+
+ 
+	<PaymentOnAccountItemLookupResponse>
+		<BeginDateTimeTransaction/>
+		<PaymentOnAccountLineItemList>
+			<PaymentOnAccountLineItem>
+				<WUpayCode/>			(Sale de la entidad DEAL?)si
+				<Amount/>
+				<Account/>
+				<OpenAmount/>			booleano
+				<MinimunAmount/> 		Entidad deal del modelo
+				<MaximunAmount/> 		Entidad deal del modelo		
+				<Currency>
+					<CurrencyName/>
+					<CurrencyCode/>
+				</Currency>
+				<DebtsLookupOrderCapture/> Agregar, para OPA marcar con "Y", BOB TipoOperacion "C" cuando requieren de Autorizador
+				<DueDate/>
+				<DueDateType/>
+				<ScanData/>				opcional
+				<ScanDataFinal/>		opcional
+				<ProductService/>	AGREGAR!!
+				<Coupon/>	AGREGAR!!
+				<Voucher/>	AGREGAR!!
+				<DealID/>	AGREGAR!!				
+				<OperationType/>		CashIn/out vuela? cambiamos la estr
+				<Type/>						¿Vuela?
+				<AdditionalDataList>
+					<AdditionalData>
+						<Id/>
+						<Order/>
+						<Title/>
+						<Help/>
+						<Value/>
+						<Type/>
+					</AdditionalData>
+				</AdditionalDataList>
+				<ServiceChargeAmount/> /Se 
+				<TenderList>
+					<Tender>
+						<TenderCode/> Modificar!!
+						<TenderName/> Agregar!!					
+					</Tender>
+				</TenderList>
+				<StatusCode></Statuscode> (Si tengo a nivel general errores en errorList, generar )	
+				<StatusMessage></StatusMessage>
+				<ErrorList>
+					<Error>
+						<ErrorCode/>		line_item_error	
+						<ErrorDescription/>		line_item_errorDescription				
+					</Error>
+				</ErrorList>				
+			</PaymentOnAccountLineItem>
+		</PaymentOnAccountLineItemList>
+		<ErrorList>
+			<Error>
+				<ErrorCode>0</ErrorCode> ¡Agregamos desc?
+				<ErrorDescription/>					
+			</Error>	
+		</ErrorList>		
+	</PaymentOnAccountItemLookupResponse>
+***************************************************************************************************************************************************
+* Servicio que valida la transaccion (por transaction ID) como tambien ajusta el monto a pagar si asi lo requiera
+
+	<TransactionValidateRequest>
+		<RetailStore/>	¿Pasa al header?
+		<Workstation/>	¿Pasa al header?
+		<SerialNumber/>  WUExternalTransactionID cambia	
+		<Tender>
+			<TenderCode/>	Agregar		(equivale al tendercode de la entidad tender)
+		</Tender>
+		<NewLineItem>
+		choice
+			<PaymentOnAccountLineItem> 
+				<WUpayCode/>
+				<Amount/>
+				<Account/>
+				<OpenAmount/>				
+				<PaymentDate/>
+				<PaymentDateType/>	
+				<CurrencyCode/>		Se agragara en la tabla de Currency		
+				<BarCode/>
+				<ServiceCharge>
+					<Amount/>
+					<Type/>
+				</ServiceCharge>			
+			</PaymentOnAccountLineItem>
+			<CashOutLineItem>
+				<WUpayCode/>
+				<Amount/>
+				<Account/>
+				<OpenAmount/>
+				<PaymentDate/>
+				<PaymentDateType/>	
+				<CurrencyCode/>
+				<BarCode/>
+				<ServiceCharge>
+					<Amount/>
+					<Type/>
+				</ServiceCharge>				
+			</CashOutLineItem>	
+		</NewLineItem>
+		<ValidatedLineitemList>
+			<LineItemList>
+		choice
+				<PaymentOnAccountLineItem> 
+					<WUpayCode/>
+					<Amount/>
+					<Account/>	
+					<OpenAmount/>					
+					<PaymentDate/>
+					<PaymentDateType/>	
+					<CurrencyCode/>					
+					<BarCode/>
+					<ServiceCharge>
+						<Amount/>
+						<Type/>
+					</ServiceCharge>			
+				</PaymentOnAccountLineItem>
+				<CashOutLineItem>
+					<WUpayCode/>
+					<Amount/>
+					<Account/>
+					<OpenAmount/>
+					<PaymentDate/>
+					<PaymentDateType/>	
+					<CurrencyCode/>					
+					<BarCode/>
+					<ServiceCharge>
+						<Amount/>
+						<Type/>
+					</ServiceCharge>				
+				</CashOutLineItem>
+			</LineItemList>	
+		</ValidatedLineitemList>	
+	</TransactionValidateRequest>
+
+	<TransactionValidateResponse>
+		<RetailStore/>
+		<Workstation/>
+		<SerialNumber/>
+		<Tender>
+			<TenderId/>
+			<CurrencyName/>
+			<TotalAmount/>
+		</Tender>	
+		<LineItemList>
+		choice
+			<PaymentOnAccountLineItem> 
+				<WUpayCode/>
+				<Amount/>
+				<Account/>	
+				<OpenAmount/>
+				<PaymentDate/>
+				<PaymentDateType/>
+				<CurrencyCode/>				
+				<BarCode/>
+				<ServiceCharge>
+					<Amount/>
+					<Type/>
+				</ServiceCharge>			
+			</PaymentOnAccountLineItem>
+			<CashOutLineItem>
+				<WUpayCode/>
+				<Amount/>
+				<Account/>	
+				<OpenAmount/>
+				<PaymentDate/>
+				<PaymentDateType/>	
+				<CurrencyCode/>					
+				<BarCode/>
+				<ServiceCharge>
+					<Amount/>
+					<Type/>
+				</ServiceCharge>				
+			</CashOutLineItem>
+			<ErrorCode/>
+			<ErrorDescription/>
+		</LineItemList>	
+	</TransactionValidateResponse>
+
+-----------------------------------------------
+
+	<TransactionConfirmRequest>
+		<RetailStore/> Header
+		<Workstation/>	Header
+		<SerialNumber/>	Header
+
+		<WUexternalTransactionID></WUexternalTransactionID> {Identificador de la transaccion} Header
+		
+		<LineItemTender>		//Agregar, es una lista (ver de donde sacamos la devolucion. )
+		//	<LineItemTenderID/>
+			<TenderCode/>
+			<CurrencyID/>
+			<DebitCredit/> credito o debito
+			<Amount/>
+		//	<TransactionID/>	
+		//	<Status/>
+			<ElectronicTransactionID/> opcional
+			<TenderCheck> 0..n
+		//		<TenderCheckID></TenderCheckID>
+				<Bank></Bank>
+				<CheckNumber></CheckNumber>
+				<CheckAmount></CheckAmount>
+		//		<LineItemTenderID></LineItemTenderID>
+				<AccountNumber></AccountNumber>
+				<ExpirationDate></ExpirationDate>
+			</TenderCheck>
+		</LineItemTender>
+		
+		Opcional
+	
+SumaMontosTransaccion = /tns:TransactionConfirmRequest/ten:LineItemTender/ten:Amount
+o
+SumaMontosTransaccion = /tns:TransactionConfirmRequest/tch:TenderCheck/tch:CheckAmount
+
+		<LineItemList>
+		!Choice
+			<PaymentOnAccountLineItem>
+				<WUTransationLineID/>
+				<WUpayCode/>
+				<IdDebt/>	//Agregar en el PaymentOnAccountItemLookup (este campo se recibe de la consulta de deuda para luego propagarla en la confirmacion/reversa)
+				<DebtDescription/> // Agregar en el PaymentOnAccountItemLookup (campo que da una breve descripcion del lineitem)
+				<EntryMethodCode/>	// Agregar en el PaymentOnAccountItemLookup (campo que indica como se capturo el lineitem LECTURA_AUTOMATICA, LECTURA_MAGNETICA , LECTURA_MANUAL)
+				<ProductService/>	// Agregar en el PaymentOnAccountItemLookup
+				<Amount/>	200 300 
+				<ServiceCharge>
+					<Amount/>
+					<Type/>
+				</ServiceCharge>	
+				<Account/>	
+				<OpenAmount/> // Agregar al PaymentOnAccountItemLookup monto abierto
+				<Voucher/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un voucher)
+				<Coupon/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un coupon)
+				<PaymentDate/>
+				<DueDateType/>			
+				<BarCode/>
+				<BarCodeFinal/>
+				<SupplierItemId/> 				LineItemAdditionalDataValues
+				<PhoneNumber/>	// Agregar al PaymentOnAccountItemLookup
+				<Company/>		// Agregar al PaymentOnAccountItemLookup			
+				<AdditionalDataList>	(puede venir o no)
+					<AdditionalData>
+						<AdditionalDataInventoryID/> 
+						<Order/> 
+						<Title/> 
+						<Help/>	
+						<Value/> 
+						<Type>
+					</AdditionalData>
+				</AdditionalDataList>								
+			</PaymentOnAccountLineItem>
+			<CashOutLineItem>
+				<WUTransationLineID/>
+				<WUpayCode/>
+				<IdDebt/>	//Agregar en el PaymentOnAccountItemLookup (este campo se recibe de la consulta de deuda para luego propagarla en la confirmacion/reversa)
+				<DebtDescription/> // Agregar en el PaymentOnAccountItemLookup (campo que da una breve descripcion del lineitem)
+				<EntryMethodCode/>	// Agregar en el PaymentOnAccountItemLookup (campo que indica como se capturo el lineitem LECTURA_AUTOMATICA, LECTURA_MAGNETICA , LECTURA_MANUAL)
+				<ProductService/>	// Agregar en el PaymentOnAccountItemLookup
+				<Amount/>	200 300 
+				<AmountService/>	3
+				<Account/>
+				<OpenAmount/> // Agregar al PaymentOnAccountItemLookup monto abierto
+				<Voucher/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un voucher)	
+				<Coupon/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un coupon)
+				<PaymentDate/>
+				<DueDateType/>			
+				<BarCode/>
+				<BarCodeFinal/>
+				<SupplierItemId/> 	
+				<AdditionalDataList>	(puede venir o no)
+					<AdditionalData>
+						<AdditionalDataInventoryID/> 
+						<Order/> 
+						<Title/> 
+						<Help/>	
+						<Value/> 
+						<Type>
+					</AdditionalData>
+				</AdditionalDataList>								
+			</CashOutLineItem>
+		</LineItemList>	
+	</TransactionConfirmRequest>
+
+
+	<TransactionConfirmResponse>
+
+		<LineItemTender>
+		//	<LineItemTenderID/>
+			<TenderCode/>
+			<CurrencyID/>
+			<DebitCredit/> credito o debito
+			<Amount/>
+		//	<TransactionID/>	
+			<Status/>
+			<ElectronicTransactionID/> opcional
+		</LineItemTender>
+		GetReceipReprintResponse/tns:LineItem/del:Deal/sup:SupplierItem/sup:ReprintCount
+		Opcional
+		<TenderCheck>
+		//	<TenderCheckID></TenderCheckID>
+			<Bank></Bank>
+			<CheckNumber></CheckNumber>
+			<CheckAmount></CheckAmount>
+		//	<LineItemTenderID></LineItemTenderID>
+			<AccountNumber></AccountNumber>
+			<ExpirationDate></ExpirationDate>
+		</TenderCheck>
+		
+		<LineItemList>
+		!Choice
+			<PaymentOnAccountLineItem>
+				<WUTransationLineID/>
+				<WUpayCode/>
+				<IdDebt/>	//Agregar en el PaymentOnAccountItemLookup (este campo se recibe de la consulta de deuda para luego propagarla en la confirmacion/reversa)
+				<DebtDescription/>	// Agregar en el PaymentOnAccountItemLookup (campo que da una breve descripcion del lineitem)
+				<EntryMethodCode/>	// Agregar en el PaymentOnAccountItemLookup (campo que indica como se capturo el lineitem LECTURA_AUTOMATICA, LECTURA_MAGNETICA , LECTURA_MANUAL)
+				<ProductService/>	// Agregar en el PaymentOnAccountItemLookup
+				<Amount/>	200 300 
+				<ServiceCharge>
+					<Amount/>
+					<Type/>
+				</ServiceCharge>	
+				<Account/>
+				<OpenAmount/> // Agregar al PaymentOnAccountItemLookup monto abierto				
+				<Voucher/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un voucher)
+				<Coupon/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un coupon)
+				<PaymentDate/>
+				<DueDateType/>			
+				<BarCode/>
+				<BarCodeFinal/>
+				<SupplierItemId/> 	
+				<PhoneNumber/>	// Agregar al PaymentOnAccountItemLookup
+				<Company/>		// Agregar al PaymentOnAccountItemLookup		
+				<ErrorCode/>
+				<ErrorDescription/>	
+				<Reversible/> Void(Cambia)
+				<ReversibleTimeLimit/>  Voidable(cambia)
+				<Ticket/>				
+				<AdditionalDataList>	(puede venir o no)
+					<AdditionalData>
+						<AdditionalDataInventoryID/> 
+						<Order/> 
+						<Title/> 
+						<Help/>	
+						<Value/> 
+						<Type>
+					</AdditionalData>
+				</AdditionalDataList>				
+			</PaymentOnAccountLineItem>
+			<CashOutLineItem>
+				<WUTransationLineID/>
+				<WUpayCode/>
+				<IdDebt/>	//Agregar en el PaymentOnAccountItemLookup (este campo se recibe de la consulta de deuda para luego propagarla en la confirmacion/reversa)
+				<DebtDescription/>	// Agregar en el PaymentOnAccountItemLookup (campo que da una breve descripcion del lineitem)
+				<EntryMethodCode/>	// Agregar en el PaymentOnAccountItemLookup (campo que indica como se capturo el lineitem LECTURA_AUTOMATICA, LECTURA_MAGNETICA , LECTURA_MANUAL)
+				<ProductService/>	// Agregar en el PaymentOnAccountItemLookup
+				<Amount/>	200 300 
+				<AmountService/>	3
+				<Account/>	
+				<OpenAmount/> // Agregar al PaymentOnAccountItemLookup monto abierto
+				<Voucher/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un voucher)
+				<Coupon/>	// Agregar al PaymentOnAccountItemLookup (campo que indica si el LineItem posee un coupon)
+				<PaymentDate/>
+				<DueDateType/>			
+				<BarCode/>
+				<BarCodeFinal/>
+				<SupplierItemId/> 				
+				<ErrorCode/>
+				<ErrorDescription/>	
+				<Reversible/> Void(Cambia)
+				<ReversibleTimeLimit/>  Voidable(cambia)	
+				<Ticket/>
+				<AdditionalDataList>	(puede venir o no)
+					<AdditionalData>
+						<AdditionalDataInventoryID/> 
+						<Order/> 
+						<Title/> 
+						<Help/>	
+						<Value/> 
+						<Type>
+					</AdditionalData>
+				</AdditionalDataList>								
+			</CashOutLineItem>	
+		</LineItemList>	
+		<ErrorCode/>
+		<ErrorDescription/>	
+	</TransactionConfirmResponse>
+
+--------------------------------------------------
